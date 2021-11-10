@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax y Carrousel</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var slideIndex = 1;
+              showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            }
+    </script>
+</head>
+<body>
+    <h1 class="texto1">Carrousel y Parallax HTML/CSS/JS</h1>
+    <div class="carrousel">
+        <div class="mySlides fade">
+            <div class="numero-pagina"> 1 / 4 </div>
+            <img src="https://fondosmil.com/fondo/29366.jpg" alt="" style="width: 100%;">
+            <div class="texto">Lorem ipsum marqui lou. 1</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numero-pagina"> 2 / 4 </div>
+            <img src="https://s1.1zoom.me/b5050/596/Evening_Forests_Mountains_Firewatch_Campo_Santo_549147_1920x1080.jpg" alt="" style="width: 100%;">
+            <div class="texto">Lorem ipsum satma lac. 2</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numero-pagina"> 3 / 4 </div>
+            <img src="https://fondosmil.com/fondo/29394.jpg" alt="" style="width: 100%;">
+            <div class="texto">Lorem ipsum sitas sit. 3</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numero-pagina"> 4 / 4 </div>
+            <img src="https://fondosmil.com/fondo/11761.jpg" alt="" style="width: 100%;">
+            <div class="texto">Lorem ipsum salar dot. 4</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+</body>
+</html>
